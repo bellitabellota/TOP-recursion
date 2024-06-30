@@ -1,8 +1,12 @@
 def merge_sort(array)
   if array.length == 1
     array
-  elsif array.length == 2 && array[0] > array[1]
-    [array[1], array[0]]
+  elsif array.length == 2
+    if array[0] > array[1]
+      [array[1], array[0]]
+    else
+      array
+    end
   else
     array_left = array.slice(0..((array.length / 2) - 1))
     array_right = array.slice((array.length / 2)..-1)
